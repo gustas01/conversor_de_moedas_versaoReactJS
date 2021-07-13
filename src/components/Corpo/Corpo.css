@@ -1,0 +1,11 @@
+.corpo{
+    display: flex;
+    flex-direction: column;
+    color: yellow;
+}
+
+.corpo img{
+    width: 100px;
+    align-self: center;
+    margin-top: 10px;
+}

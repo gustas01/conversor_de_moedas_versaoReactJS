@@ -1,0 +1,31 @@
+label{
+    margin-left: 5px;
+    width: min-content;
+}
+
+.inputGeral{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    width: calc(100% - 10px);    
+    margin-bottom: 10px;
+}
+
+input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    color: yellow;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.inputSimbolo{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border: 1px solid yellow;
+    border-radius: 5px;
+}

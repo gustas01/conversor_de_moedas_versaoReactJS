@@ -1,0 +1,10 @@
+.cabecalho{
+    background-color: #f2b400;
+    color: black;
+    font-weight: 700;
+    padding: 10px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+}
