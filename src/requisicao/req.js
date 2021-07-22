@@ -1,5 +1,6 @@
-const url = "https://api.hgbrasil.com/finance"
+const url = "https://api.hgbrasil.com/finance?key=515ddc5c"
 const { default: axios } = require("axios")
+
 
 async function pegaDados(){
     const response = await axios.get(url)

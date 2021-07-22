@@ -41,8 +41,8 @@ export default class Inputs extends React.Component{
            pegaDados().then( response => {
                const dados = response.data
                this.setState({
-                    dolaresValor: dados.USD.buy,
-                    eurosValor: dados.USD.buy
+                    dolaresValor: this.reaisValor * dados.USD.buy,
+                    eurosValor: this.reaisValor*dados.USD.buy
                 })
             })
         }
