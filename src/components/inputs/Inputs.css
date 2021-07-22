@@ -1,11 +1,13 @@
 label{
     margin-left: 5px;
+    margin-top: 10px;
     width: min-content;
 }
 
 .inputGeral{
     display: flex;
     flex-direction: column;
+    gap: 2px;
     margin-left: 5px;
     width: calc(100% - 10px);    
     margin-bottom: 10px;
@@ -28,4 +30,9 @@ input{
     align-items: center;
     border: 1px solid yellow;
     border-radius: 5px;
+}
+
+.inputSimbolo label{
+    width: 8%;
+    margin-top: 0;
 }

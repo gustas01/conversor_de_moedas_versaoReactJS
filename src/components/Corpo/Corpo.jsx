@@ -8,9 +8,7 @@ export default class Corpo extends React.Component{
         return (
             <div className="corpo">
                 <img src={cifraoIcon} alt="cifrão" />
-                <Inputs moeda="Reais" simbolo="R$"/>
-                <Inputs moeda="Dolares" simbolo="US$"/>
-                <Inputs moeda="Euros" simbolo="Є"/> 
+                <Inputs/>
             </div>
         )
     }

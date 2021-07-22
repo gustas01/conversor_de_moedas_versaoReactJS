@@ -4,13 +4,6 @@ import Cabecalho from '../Cabecalho/Cabecalho'
 import Corpo from '../Corpo/Corpo'
 
 export default class Principal extends React.Component{
-    
-    
-
-
-
-
-    
     render(){
         return(
             <div className="principal">
