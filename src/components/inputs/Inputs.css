@@ -32,6 +32,21 @@ input{
     border-radius: 5px;
 }
 
+.inputSimboloBitcoin{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border: 1px solid red;
+    border-radius: 5px;
+    color: red;
+}
+
+
+.inputSimboloBitcoin label{
+    width: 8%;
+    margin-top: 0;
+}
+
 .inputSimbolo label{
     width: 8%;
     margin-top: 0;

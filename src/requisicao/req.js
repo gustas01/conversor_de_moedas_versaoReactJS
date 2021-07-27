@@ -2,6 +2,7 @@ const urldolar = "https://economia.awesomeapi.com.br/json/last/USD-BRL"
 const urleuro = "https://economia.awesomeapi.com.br/json/last/EUR-BRL"
 const urlDolarParaEuro = "https://economia.awesomeapi.com.br/json/last/USD-EUR"
 const urlEuroParaDolar = "https://economia.awesomeapi.com.br/json/last/EUR-USD"
+const urlBitcoin = "https://economia.awesomeapi.com.br/json/last/BTC-BRL"
 
 const { default: axios } = require("axios")
 
@@ -34,6 +35,12 @@ async function pegaDadosEuroParaDolar(){
     return resultado
 }
 
+async function pegaDadosBitcoin(){
+    const response = await axios.get(urlBitcoin)
+    const dados = response.data
+    const resultado = dados.BTCBRL.high
+    return resultado
+}
 
 
-export {pegaDadosDolar, pegaDadosEuro, pegaDadosDolarParaEuro, pegaDadosEuroParaDolar};
+export {pegaDadosDolar, pegaDadosEuro, pegaDadosDolarParaEuro, pegaDadosEuroParaDolar, pegaDadosBitcoin};

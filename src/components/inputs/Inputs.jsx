@@ -1,6 +1,6 @@
 import React from 'react'
 import './Inputs.css'
-import {pegaDadosDolar, pegaDadosEuro, pegaDadosDolarParaEuro, pegaDadosEuroParaDolar} from '../../requisicao/req.js';
+import {pegaDadosDolar, pegaDadosEuro, pegaDadosDolarParaEuro, pegaDadosEuroParaDolar, pegaDadosBitcoin} from '../../requisicao/req.js';
 
 
 export default class Inputs extends React.Component{
@@ -93,6 +93,12 @@ export default class Inputs extends React.Component{
     }
     
     
+    (this.bitcoinLoad = (e) => {
+        pegaDadosBitcoin().then( response => {
+            document.getElementById("Bitcoin").value = response
+        })
+    })() //função IIFE
+
 
     // const {reaisValor, dolaresValor, eurosValor} = this.state;
 
@@ -118,6 +124,12 @@ export default class Inputs extends React.Component{
                 <div className="inputSimbolo">
                     <label htmlFor="Euros">Є</label>
                     <input onChange={this.eurosChange} type="number" id="Euros" />
+                </div>
+                
+                <label htmlFor="Bitcoin" style={{color: "red"}}>Bitcoin</label>
+                <div className="inputSimboloBitcoin">
+                    <label htmlFor="Bitcoin">R$</label>
+                    <input type="text" id="Bitcoin" disabled={true}/>
                 </div>
             </div>
 
