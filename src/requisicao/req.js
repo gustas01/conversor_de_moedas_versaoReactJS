@@ -1,12 +1,22 @@
-const url = "https://api.hgbrasil.com/finance?key=515ddc5c"
+const urldolar = "https://economia.awesomeapi.com.br/json/last/USD-BRL"
+const urleuro = "https://economia.awesomeapi.com.br/json/last/EUR-BRL"
 const { default: axios } = require("axios")
 
 
-async function pegaDados(){
-    const response = await axios.get(url)
+async function pegaDadosDolar(){
+    const response = await axios.get(urldolar)
     const dados = response.data
-    const resultado = dados.results.currencies
+    const resultado = dados.USDBRL.high
     return resultado
 }
 
-export default pegaDados;
+async function pegaDadosEuro(){
+    const response = await axios.get(urleuro)
+    const dados = response.data
+    const resultado = dados.EURBRL.high
+    return resultado
+}
+
+
+
+export {pegaDadosDolar, pegaDadosEuro};

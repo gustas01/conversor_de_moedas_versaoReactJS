@@ -4,7 +4,7 @@ import './Cabecalho.css'
 export default function Cabecalho(){
     return (
         <div className="cabecalho">
-            <p>$ Cabeçalho $</p>
+            <p>$ Conversor $</p>
         </div>
     )
 }
