@@ -1,6 +1,6 @@
 import React from 'react'
 import './Inputs.css'
-import {pegaDadosDolar, pegaDadosEuro} from '../../requisicao/req.js';
+import {pegaDadosDolar, pegaDadosEuro, pegaDadosDolarParaEuro, pegaDadosEuroParaDolar} from '../../requisicao/req.js';
 
 
 export default class Inputs extends React.Component{
@@ -38,6 +38,57 @@ export default class Inputs extends React.Component{
             })
             eurosInput.value = this.state.eurosValor.toFixed(2)
         })
+
+    }
+
+       this.dolaresChange = (e) =>{
+           let valorDolaresInput = e.target.value
+           let reaisInput = document.getElementById("Reais")
+           let eurosInput = document.getElementById("Euros")
+           
+           pegaDadosDolar().then( response => {
+               const dados = response
+               this.setState({
+                   dolaresValor: valorDolaresInput,
+                   reaisValor: valorDolaresInput*dados
+                })
+                reaisInput.value = this.state.reaisValor.toFixed(2)
+            })
+            
+            pegaDadosDolarParaEuro().then(response => {
+                const dados = response
+                this.setState({
+                    dolaresValor: valorDolaresInput,
+                    eurosValor: dados*valorDolaresInput
+            })
+                eurosInput.value = this.state.eurosValor.toFixed(2)
+            })
+
+    }
+
+
+       this.eurosChange = (e) =>{
+           let valorEurosInput = e.target.value
+           let reaisInput = document.getElementById("Reais")
+           let dolaresInput = document.getElementById("Dolares")
+           
+           pegaDadosEuro().then( response => {
+               const dados = response
+               this.setState({
+                   eurosValor: valorEurosInput,
+                   reaisValor: valorEurosInput*dados
+                })
+                reaisInput.value = this.state.reaisValor.toFixed(2)
+            })
+            
+            pegaDadosEuroParaDolar().then(response => {
+                const dados = response
+                this.setState({
+                    eurosValor: valorEurosInput,
+                    dolaresValor: dados*valorEurosInput
+            })
+                dolaresInput.value = this.state.dolaresValor.toFixed(2)
+            })
 
     }
     
