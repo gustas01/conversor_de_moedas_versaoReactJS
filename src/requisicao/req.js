@@ -38,7 +38,7 @@ async function pegaDadosEuroParaDolar(){
 async function pegaDadosBitcoin(){
     const response = await axios.get(urlBitcoin)
     const dados = response.data
-    const resultado = dados.BTCBRL.high
+    const resultado = dados.BTCBRL.bid
     return resultado
 }
 
